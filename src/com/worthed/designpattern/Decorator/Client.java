@@ -17,11 +17,22 @@
 package com.worthed.designpattern.Decorator;
 
 /**
+ * 装饰者模式（Decorator）也叫包装器模式（Wrapper）。
+ *  * 动态地给一个对象添加一些额外的职责。
+ *  * 遵循开闭原则
+ *
  * Created by zhenguo on 11/20/14.
  */
 public class Client {
 
+    /**
+     * 在不必改变原类文件和使用继承的情况下，动态地扩展一个对象的功能。
+     * 它是通过创建一个包装对象，也就是装饰来包裹真实的对象。
+     *
+     * @param args
+     */
     public static void main(String[] args) {
+        /** 用ConcreteDecoratorA和ConcreteDecoratorB来装饰ConcreteComponent */
         ConcreteComponent concreteComponent = new ConcreteComponent();
         ConcreteDecoratorA concreteDecoratorA = new ConcreteDecoratorA(concreteComponent);
         ConcreteDecoratorB concreteDecoratorB = new ConcreteDecoratorB(concreteDecoratorA);

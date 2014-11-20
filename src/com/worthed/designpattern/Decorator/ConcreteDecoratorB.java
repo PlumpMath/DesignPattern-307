@@ -22,13 +22,16 @@ package com.worthed.designpattern.Decorator;
  */
 public class ConcreteDecoratorB extends Decorator {
 
+    private String tag = "";
+
     public ConcreteDecoratorB(Component component) {
         super(component);
+        tag = getClass().getSimpleName();
     }
 
     @Override
     public void operation() {
         super.operation();
-        System.out.println("装饰操作B");
+        System.out.println("装饰操作B tag = " + tag);
     }
 }

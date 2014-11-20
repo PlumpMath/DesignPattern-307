@@ -29,6 +29,10 @@ public class ConcreteDecoratorA extends Decorator {
     @Override
     public void operation() {
         super.operation();
+        decorate();
+    }
+
+    private void decorate() {
         System.out.println("装饰操作A");
     }
 }
