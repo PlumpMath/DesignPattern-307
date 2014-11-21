@@ -18,8 +18,8 @@ package com.worthed.designpattern.Decorator;
 
 /**
  * 装饰者模式（Decorator）也叫包装器模式（Wrapper）。
- *  * 动态地给一个对象添加一些额外的职责。
- *  * 遵循开闭原则
+ *  1. 动态地给一个对象添加一些额外的职责。
+ *  2. 遵循开闭原则
  *
  * Created by zhenguo on 11/20/14.
  */
