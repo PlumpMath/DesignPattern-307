@@ -14,30 +14,30 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Adapter;
+package com.worthed.designpattern.Memento;
 
 /**
  * 客户端调用
- * 适配器模式(Adapter)，将一个类的接口转换成客户希望的另外一个接口。Adapter模式使得原本由于接口
- * 不兼容而不能一起工作的那些类可以一起工作。
- * 适配器模式实现方式有两种：类适配和对象适配
- *
- * Created by zhenguo on 11/29/14.
+ * 备忘录模式(Memento)，再不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。
+ * 这样以后就可将该对象恢复到原先保存的状态。
+ * 
+ * Created by zhenguo on 11/30/14.
  */
 public class Client {
 
     public static void main(String[] args) {
-        // 类适配
-        System.out.println("类适配：");
-        ITarget classAdapter = new ClassAdapter();
-        classAdapter.run();
-        classAdapter.fly();
+        Originator originator = new Originator();
+        originator.setState("On");
+        originator.show();
 
-        // 对象适配
-        System.out.println("对象适配：");
-        ITarget objectAdapter = new ObjectAdapter();
-        objectAdapter.run();
-        objectAdapter.fly();
+        Caretaker caretaker = new Caretaker();
+        caretaker.setMemento(originator.createMemento());
+
+        originator.setState("Off");
+        originator.show();
+
+        originator.setMemento(caretaker.getMemento());
+        originator.show();
 
     }
 
