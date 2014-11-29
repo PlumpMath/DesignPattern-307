@@ -14,31 +14,39 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Memento;
+package com.worthed.designpattern.Composite;
 
 /**
  * 客户端调用
- * 备忘录模式(Memento)，再不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。
- * 这样以后就可将该对象恢复到原先保存的状态。
  *
  * Created by zhenguo on 11/30/14.
  */
 public class Client {
 
     public static void main(String[] args) {
-        Originator originator = new Originator();
-        originator.setState("On");
-        originator.show();
+        Composite root = new Composite("root");
+        root.add(new Leaf("Leaf A"));
+        root.add(new Leaf("Leaf B"));
 
-        Caretaker caretaker = new Caretaker();
-        caretaker.setMemento(originator.createMemento());
+        Composite composite = new Composite("Composite X");
+        composite.add(new Leaf("Leaf XA"));
+        composite.add(new Leaf("Leaf XB"));
 
-        originator.setState("Off");
-        originator.show();
+        root.add(composite);
 
-        originator.setMemento(caretaker.getMemento());
-        originator.show();
+        Composite composite1 = new Composite("Composite XY");
+        composite1.add(new Leaf("Leaf XYA"));
+        composite1.add(new Leaf("Leaf XYB"));
 
+        composite.add(composite1);
+
+        root.add(new Leaf("Leaf C"));
+
+        Leaf leaf = new Leaf("Leaf D");
+        root.add(leaf);
+        root.remove(leaf);
+
+        root.display(1);
     }
 
 }
