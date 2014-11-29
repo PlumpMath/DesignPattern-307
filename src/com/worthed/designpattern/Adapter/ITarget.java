@@ -14,28 +14,17 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Builder;
+package com.worthed.designpattern.Adapter;
 
 /**
- * 客户端调用
- * 建造者模式(Builder)，将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
+ * 目标接口
  *
- * Created by zhenguo on 11/27/14.
+ * Created by zhenguo on 11/29/14.
  */
-public class Client {
+public interface ITarget {
 
-    public static void main(String[] args) {
-        Director director = new Director();
-        Builder b1 = new ConcreteBuilder1();
-        Builder b2 = new ConcreteBuilder2();
+    public void run();
 
-        director.construct(b1);
-        Product p1 = b1.getResult();
-        p1.show();
-
-        director.construct(b2);
-        Product p2 = b2.getResult();
-        p2.show();
-    }
+    public void fly();
 
 }

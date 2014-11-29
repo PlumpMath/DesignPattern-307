@@ -14,28 +14,31 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Builder;
+package com.worthed.designpattern.Adapter;
 
 /**
  * 客户端调用
- * 建造者模式(Builder)，将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
+ * 适配器模式(Adapter)，将一个类的接口转换成客户希望的另外一个接口。Adapter模式使得原本由于接口
+ * 不兼容而不能一起工作的那些类可以一起工作。
+ * 适配器模式实现方式有两种：类适配和对象适配
  *
- * Created by zhenguo on 11/27/14.
+ * Created by zhenguo on 11/29/14.
  */
 public class Client {
 
     public static void main(String[] args) {
-        Director director = new Director();
-        Builder b1 = new ConcreteBuilder1();
-        Builder b2 = new ConcreteBuilder2();
+        // 类适配
+        System.out.println("类适配：");
+        ClassAdapter classAdapter = new ClassAdapter();
+        classAdapter.run();
+        classAdapter.fly();
 
-        director.construct(b1);
-        Product p1 = b1.getResult();
-        p1.show();
+        // 对象适配
+        System.out.println("对象适配：");
+        ObjectAdapter objectAdapter = new ObjectAdapter();
+        objectAdapter.run();
+        objectAdapter.fly();
 
-        director.construct(b2);
-        Product p2 = b2.getResult();
-        p2.show();
     }
 
 }
