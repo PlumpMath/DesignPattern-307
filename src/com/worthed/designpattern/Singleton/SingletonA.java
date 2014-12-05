@@ -14,35 +14,21 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Memento;
+package com.worthed.designpattern.Singleton;
 
 /**
- * 发起人
+ * 单例设计模式中的饱汉式
  *
- * Created by zhenguo on 11/30/14.
+ * Created by zhenguo on 12/5/14.
  */
-public class Originator {
+public class SingletonA {
 
-    private String state;
+    private static SingletonA instance = new SingletonA();
 
-    public String getState() {
-        return state;
+    private SingletonA() {
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public static SingletonA getInstance() {
+        return instance;
     }
-
-    public void setMemento(Memento memento) {
-        state = memento.getState();
-    }
-
-    public Memento createMemento() {
-        return new Memento(state);
-    }
-
-    public void show() {
-        System.out.println("Current State : " + state);
-    }
-
 }

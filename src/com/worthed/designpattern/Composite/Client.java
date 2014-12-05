@@ -18,6 +18,8 @@ package com.worthed.designpattern.Composite;
 
 /**
  * 客户端调用
+ * 组合模式(Composite)，将对象组合成树形结构以表示‘部分-整体’的层次结构。组合模式使得用户
+ * 对单个对象和组合对象的使用具有一致性。
  *
  * Created by zhenguo on 11/30/14.
  */
