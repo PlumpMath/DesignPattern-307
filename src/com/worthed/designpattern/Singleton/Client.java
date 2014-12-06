@@ -26,6 +26,7 @@ package com.worthed.designpattern.Singleton;
 public class Client {
 
     public static void main(String[] args) {
+        // 饱汉实现方式
         SingletonA singletonA1 = SingletonA.getInstance();
         SingletonA singletonA2 = SingletonA.getInstance();
         if (singletonA1 == singletonA2) {
@@ -33,7 +34,8 @@ public class Client {
         } else {
             System.out.println("singletonA1和singletonA2不是一个对象");
         }
-        
+
+        // 饿汉实现方式
         SingletonB singletonB1 = SingletonB.getInstance();
         SingletonB singletonB2 = SingletonB.getInstance();
         if (singletonB1 == singletonB2) {
@@ -41,6 +43,8 @@ public class Client {
         } else {
             System.out.println("singletonB1和singletonB2不是一个对象");
         }
+
+        // 更方便的饿汉实现方式
     }
 
 }
