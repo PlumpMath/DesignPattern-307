@@ -14,25 +14,17 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Bridge;
+package com.worthed.designpattern.Command;
 
 /**
- * 客户端调用
- * 桥接模式(Bridge)，将抽象部分与它的实现部分分离，使它们都可以独立地变化。
+ * 接受者，知道如何实施与执行一个与请求相关的操作。
  *
  * Created by zhenguo on 12/8/14.
  */
-public class Client {
+public class Receiver {
 
-    public static void main(String[] args) {
-        Abstraction abstraction = new RefinedAbstraction();
-
-        abstraction.setImplementor(new ConcreteImplementorA());
-        abstraction.operation();
-
-        abstraction.setImplementor(new ConcreteImplementorB());
-        abstraction.operation();
-
+    public void action() {
+        System.out.println("执行操作");
     }
 
 }
