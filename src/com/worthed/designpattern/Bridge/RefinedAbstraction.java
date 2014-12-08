@@ -14,24 +14,18 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Singleton;
+package com.worthed.designpattern.Bridge;
 
 /**
- * 单例设计模式中的懒汉式
+ * 抽象实现子类
  *
- * Created by zhenguo on 12/5/14.
+ * Created by zhenguo on 12/8/14.
  */
-public class SingletonB {
-
-    private static SingletonB instance = null;
-
-    private SingletonB() {
-    }
-
-    public static synchronized SingletonB getInstance() {
-        if (instance == null) {
-            instance = new SingletonB();
+public class RefinedAbstraction extends Abstraction {
+    @Override
+    public void operation() {
+        if (implementor != null) {
+            implementor.operation();
         }
-        return instance;
     }
 }

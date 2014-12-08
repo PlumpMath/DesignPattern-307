@@ -14,24 +14,15 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Singleton;
+package com.worthed.designpattern.Bridge;
 
 /**
- * 单例设计模式中的懒汉式
+ * 实现接口
  *
- * Created by zhenguo on 12/5/14.
+ * Created by zhenguo on 12/8/14.
  */
-public class SingletonB {
+public interface Implementor {
 
-    private static SingletonB instance = null;
+    public void operation();
 
-    private SingletonB() {
-    }
-
-    public static synchronized SingletonB getInstance() {
-        if (instance == null) {
-            instance = new SingletonB();
-        }
-        return instance;
-    }
 }

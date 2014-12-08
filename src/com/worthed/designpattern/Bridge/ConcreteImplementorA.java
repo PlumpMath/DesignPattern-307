@@ -14,24 +14,16 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Singleton;
+package com.worthed.designpattern.Bridge;
 
 /**
- * 单例设计模式中的懒汉式
+ * 实现派生类A
  *
- * Created by zhenguo on 12/5/14.
+ * Created by zhenguo on 12/8/14.
  */
-public class SingletonB {
-
-    private static SingletonB instance = null;
-
-    private SingletonB() {
-    }
-
-    public static synchronized SingletonB getInstance() {
-        if (instance == null) {
-            instance = new SingletonB();
-        }
-        return instance;
+public class ConcreteImplementorA implements Implementor {
+    @Override
+    public void operation() {
+        System.out.println("具体实现A的方法执行");
     }
 }

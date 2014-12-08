@@ -17,7 +17,7 @@
 package com.worthed.designpattern.Singleton;
 
 /**
- * 单例设计模式中的饱汉式
+ * 单例设计模式中的饿汉式
  *
  * Created by zhenguo on 12/5/14.
  */

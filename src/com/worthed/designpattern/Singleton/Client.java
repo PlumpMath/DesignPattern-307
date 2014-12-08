@@ -44,7 +44,7 @@ public class Client {
             System.out.println("singletonB1和singletonB2不是一个对象");
         }
 
-        // 更方便的饿汉实现方式
+        // 更方便的实现方式 待续...
     }
 
 }

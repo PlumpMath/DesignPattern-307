@@ -14,24 +14,25 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Singleton;
+package com.worthed.designpattern.Bridge;
 
 /**
- * 单例设计模式中的懒汉式
+ * 客户端调用
+ * 桥接模式，将抽象部分与它的实现部分分离，使它们都可以独立地变化。
  *
- * Created by zhenguo on 12/5/14.
+ * Created by zhenguo on 12/8/14.
  */
-public class SingletonB {
+public class Client {
 
-    private static SingletonB instance = null;
+    public static void main(String[] args) {
+        Abstraction abstraction = new RefinedAbstraction();
 
-    private SingletonB() {
+        abstraction.setImplementor(new ConcreteImplementorA());
+        abstraction.operation();
+
+        abstraction.setImplementor(new ConcreteImplementorB());
+        abstraction.operation();
+
     }
 
-    public static synchronized SingletonB getInstance() {
-        if (instance == null) {
-            instance = new SingletonB();
-        }
-        return instance;
-    }
 }
