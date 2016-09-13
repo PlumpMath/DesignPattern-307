@@ -14,23 +14,29 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Command;
+package com.worthed.designpattern.Iterator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * 要求命令执行这个请求
+ * 具体聚集类
  *
- * Created by zhenguo on 12/8/14.
+ * Created by zhenguo on 9/13/16.
  */
-public class Invoker {
+public class ConcreteAggretate implements Aggregate{
 
-    private Command command;
-
-    public void setCommand(Command command) {
-        this.command = command;
+    private List list = new ArrayList();
+    public void add(Object obj) {
+        list.add(obj);
     }
 
-    public void executeCommand() {
-        command.execute();
+    public Iterator iterator() {
+        return new ConcreteIterator(list);
+    }
+
+    public void remove(Object obj) {
+        list.remove(obj);
     }
 
 }

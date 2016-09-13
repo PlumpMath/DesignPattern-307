@@ -14,23 +14,16 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Command;
+package com.worthed.designpattern.Iterator;
 
 /**
- * 要求命令执行这个请求
+ * 聚集接口
  *
- * Created by zhenguo on 12/8/14.
+ * Created by zhenguo on 9/13/16.
  */
-public class Invoker {
+public interface Aggregate {
 
-    private Command command;
-
-    public void setCommand(Command command) {
-        this.command = command;
-    }
-
-    public void executeCommand() {
-        command.execute();
-    }
-
+    public void add(Object obj);
+    public void remove(Object obj);
+    public Iterator iterator();
 }

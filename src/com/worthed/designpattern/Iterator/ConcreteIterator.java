@@ -14,23 +14,37 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Command;
+package com.worthed.designpattern.Iterator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * 要求命令执行这个请求
- *
- * Created by zhenguo on 12/8/14.
+ * 具体迭代器实现类
+ * <p>
+ * Created by zhenguo on 9/13/16.
  */
-public class Invoker {
+public class ConcreteIterator implements Iterator {
 
-    private Command command;
+    private List list = new ArrayList();
+    private int cursor = 0;
 
-    public void setCommand(Command command) {
-        this.command = command;
+    public ConcreteIterator(List list) {
+        this.list = list;
     }
 
-    public void executeCommand() {
-        command.execute();
+    public boolean hasNext() {
+        if (cursor == list.size()) {
+            return false;
+        }
+        return true;
     }
 
+    public Object next() {
+        Object obj = null;
+        if (this.hasNext()) {
+            obj = this.list.get(cursor++);
+        }
+        return obj;
+    }
 }

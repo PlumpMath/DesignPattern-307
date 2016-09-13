@@ -14,23 +14,23 @@
  *    limitations under the License.
  */
 
-package com.worthed.designpattern.Command;
+package com.worthed.designpattern.Iterator;
 
 /**
- * 要求命令执行这个请求
- *
- * Created by zhenguo on 12/8/14.
+ * Created by zhenguo on 9/13/16.
  */
-public class Invoker {
+public class Client {
 
-    private Command command;
-
-    public void setCommand(Command command) {
-        this.command = command;
-    }
-
-    public void executeCommand() {
-        command.execute();
+    public static void main(String[] args) {
+        Aggregate ag = new ConcreteAggretate();
+        ag.add("小明");
+        ag.add("小红");
+        ag.add("小刚");
+        Iterator it = ag.iterator();
+        while(it.hasNext()){
+            String str = (String)it.next();
+            System.out.println(str);
+        }
     }
 
 }
